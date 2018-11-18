@@ -1568,3 +1568,15 @@ Hide the images by default */ .mySlides {
 .container .info span .fa {
   color: #EF3B3A;
 }
+
+/******/
+
+.user-profile {
+  text-align: center;
+  font-family: 'lane_-_narrowregular';
+}
+
+.profile-container {
+  text-align: center;
+  font-family: 'run_wildregular';
+}

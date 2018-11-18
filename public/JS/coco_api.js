@@ -15,6 +15,28 @@ $.getJSON('http://localhost:8080/api/events', function (data) {
 
 });
 
+function getUserProfile() {
+
+    if (localStorage.authToken) {
+
+        $.getJSON('http://localhost:8080/api/users', function (data) {
+            for (let i = 0; i < data.length; i++) {
+                if (localStorage.username === data[i].username) {
+                    $(".user-profile").append(`<pre><b>First Name:</b> ${data[i].firstName}</pre>`);
+                    $(".user-profile").append(`<pre><b>Last Name:</b> ${data[i].lastName}</pre>`);
+                    $(".user-profile").append(`<pre><b>Address:</b> ${data[i].address}</pre>`);
+                    $(".user-profile").append(`<pre><b>City:</b> ${data[i].city}</pre>`);
+                    $(".user-profile").append(`<pre><b>State:</b> ${data[i].state}</pre>`);
+                    $(".user-profile").append(`<pre><b>Country:</b> ${data[i].country}</pre>`);
+                    $(".user-profile").append(`<pre><b>Top Size:</b> ${data[i].topSize}</pre>`);
+                    $(".user-profile").append(`<pre><b>Bottom Size:</b> ${data[i].bottomSize}</pre>`);
+                }
+            }
+        })
+    } else return;
+
+}
+
 $(function () {
     if (localStorage.authToken) {
         $('#login').css('display', 'none');
@@ -74,9 +96,14 @@ function handleSignUp() {
     });
 }
 
+function handleLogin() {
+
+
+}
+
 $(function () {
     handleSignUp();
-
-
+    handleLogin();
+    getUserProfile();
 
 })
