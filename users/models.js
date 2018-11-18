@@ -21,6 +21,27 @@ const UserSchema = mongoose.Schema({
   lastName: {
     type: String,
     default: ''
+  },
+  address: {
+    type: String
+  },
+  city: {
+    type: String
+  },
+  state: {
+    type: String
+  },
+  zipCode: {
+    type: Number
+  },
+  country: {
+    type: String
+  },
+  topSize: {
+    type: String
+  },
+  bottomSize: {
+    type: String
   }
 });
 
@@ -28,7 +49,14 @@ UserSchema.methods.serialize = function () {
   return {
     username: this.username || '',
     firstName: this.firstName || '',
-    lastName: this.lastName || ''
+    lastName: this.lastName || '',
+    address: this.address || '',
+    city: this.city,
+    state: this.state,
+    zipCode: this.zipCode,
+    country: this.country,
+    topSize: this.topSize,
+    bottomSize: this.bottomSize
   };
 };
 

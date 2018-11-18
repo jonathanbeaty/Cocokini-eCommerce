@@ -5,16 +5,13 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
 
-// Here we use destructuring assignment with renaming so the two variables
-// called router (from ./users and ./auth) have different names
-// For example:
-// const actorSurnames = { james: "Stewart", robert: "De Niro" };
-// const { james: jimmy, robert: bobby } = actorSurnames;
-// console.log(jimmy); // Stewart - the variable name is jimmy, not james
-// console.log(bobby); // De Niro - the variable name is bobby, not robert
 const {
   router: usersRouter
 } = require('./users');
+
+const {
+  router: eventsRouter
+} = require('./events');
 
 const {
   router: authRouter,
@@ -32,10 +29,8 @@ const {
 const app = express();
 app.use(express.static('public'))
 
-// Logging
 app.use(morgan('common'));
 
-// CORS
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
@@ -50,13 +45,13 @@ passport.use(localStrategy);
 passport.use(jwtStrategy);
 
 app.use('/api/users/', usersRouter);
+app.use('/api/events/', eventsRouter);
 app.use('/api/auth/', authRouter);
 
 const jwtAuth = passport.authenticate('jwt', {
   session: false
 });
 
-// A protected endpoint which needs a valid JWT to access it
 app.get('/api/protected', jwtAuth, (req, res) => {
   return res.json({
     data: 'rosebud'
@@ -69,8 +64,6 @@ app.use('*', (req, res) => {
   });
 });
 
-// Referenced by both runServer and closeServer. closeServer
-// assumes runServer has run and set `server` to a server object
 let server;
 
 function runServer(databaseUrl, port = PORT) {

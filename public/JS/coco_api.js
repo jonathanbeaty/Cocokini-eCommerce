@@ -15,15 +15,15 @@
 
 // });
 
-// $(function () {
-//     if (localStorage.authToken) {
-//         $('#login').css('display', 'none');
-//         $('#sign-up').css('display', 'none');
-//     } else {
-//         $('#my-account').css('display', 'none');
-//         $('#logout').css('display', 'none');
-//     }
-// });
+$(function () {
+    if (localStorage.authToken) {
+        $('#login').css('display', 'none');
+        $('#sign-up').css('display', 'none');
+    } else {
+        $('#my-account').css('display', 'none');
+        $('#logout').css('display', 'none');
+    }
+});
 
 function handleSignUp() {
     $(".signup-form").submit(event => {
@@ -36,24 +36,24 @@ function handleSignUp() {
             password: $form.find('[name=password]').val(),
             firstName: $form.find('[name=firstName]').val(),
             lastName: $form.find('[name=lastName]').val(),
-            // password2: $form.find('[name=password2]').val(),
-            // address: $form.find('[name=address]').val(),
-            // city: $form.find('[name=city]').val(),
-            // state: $form.find('[name=state]').val(),
-            // zipcode: $form.find('[name=zipCode]').val(),
-            // country: $form.find('[name=country]').val(),
-            // topSize: $form.find('[name=topSize]').val(),
-            // bottomSize: $form.find('[name=bottomSize]').val()
+            password2: $form.find('[name=password2]').val(),
+            address: $form.find('[name=address]').val(),
+            city: $form.find('[name=city]').val(),
+            state: $form.find('[name=state]').val(),
+            zipcode: $form.find('[name=zipCode]').val(),
+            country: $form.find('[name=country]').val(),
+            topSize: $form.find('[name=topSize]').val(),
+            bottomSize: $form.find('[name=bottomSize]').val()
         }
 
         console.log(JSON.stringify(userData));
 
-        // let password = $form.find('[name=password]').val();
-        // let password2 = $form.find('[name=password2]').val();
-        // if (password !== password2 || password.length < 6) {
-        //     alert('Passwords must match and have more than 5 characters')
-        //     return;
-        // }
+        let password = $form.find('[name=password]').val();
+        let password2 = $form.find('[name=password2]').val();
+        if (password !== password2 || password.length < 6) {
+            alert('Passwords must match and have more than 5 characters')
+            return;
+        }
 
         $.ajax({
             type: 'POST',
