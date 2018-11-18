@@ -1,19 +1,19 @@
-// $.getJSON('http://localhost:8080/products', function (data) {
+$.getJSON('http://localhost:8080/api/products', function (data) {
 
-//     $("#apiContainer").append(`<img id="onepic" src="${data[0].picture.url}" style="width:100%;">`);
+    $("#apiContainer").append(`<img id="onepic" src="${data[0].url}" style="width:100%;">`);
 
-// });
+});
 
-// $.getJSON('http://localhost:8080/events', function (data) {
+$.getJSON('http://localhost:8080/api/events', function (data) {
 
-//     $("#farmers").append(`<img class="ev1" src="${data[0].picture.url}" height="225px;"> <div style="font-size: 20px;" class="centered">the island farmers and art market</br>·
-//     june 8th ·</br>corpus christi, tx</div>`);
-//     $("#swimweek").append(`<img class="ev1" src="${data[1].picture.url}" height="225px;"><div style="font-size: 20px;" class="centered">miami swim week</br>· july 16th ·</br>miami,
-//     fl</div>`);
-//     $("#localslist").append(`<img class="ev1" src="${data[2].picture.url}" height="225px;"><div style="font-size: 20px;" class="centered">the locals list party</br>· tbd ·</br>corpus
-//     christi, tx</div>`);
+    $("#farmers").append(`<img class="ev1" src="${data[0].url}" height="225px;"> <div style="font-size: 20px;" class="centered">the island farmers and art market</br>·
+    june 8th ·</br>corpus christi, tx</div>`);
+    $("#swimweek").append(`<img class="ev1" src="${data[1].url}" height="225px;"><div style="font-size: 20px;" class="centered">miami swim week</br>· july 16th ·</br>miami,
+    fl</div>`);
+    $("#localslist").append(`<img class="ev1" src="${data[2].url}" height="225px;"><div style="font-size: 20px;" class="centered">the locals list party</br>· tbd ·</br>corpus
+    christi, tx</div>`);
 
-// });
+});
 
 $(function () {
     if (localStorage.authToken) {
