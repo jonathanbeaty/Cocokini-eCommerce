@@ -14,6 +14,10 @@ const {
 } = require('./events');
 
 const {
+  router: productsRouter
+} = require('./products');
+
+const {
   router: authRouter,
   localStrategy,
   jwtStrategy
@@ -46,6 +50,7 @@ passport.use(jwtStrategy);
 
 app.use('/api/users/', usersRouter);
 app.use('/api/events/', eventsRouter);
+app.use('/api/products/', productsRouter);
 app.use('/api/auth/', authRouter);
 
 const jwtAuth = passport.authenticate('jwt', {
