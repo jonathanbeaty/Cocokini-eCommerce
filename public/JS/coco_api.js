@@ -34,7 +34,6 @@ function getUserProfile() {
             }
         })
     } else return;
-
 }
 
 $(function () {
@@ -85,7 +84,7 @@ function handleSignUp() {
                 localStorage.setItem('authToken', res.authToken);
                 localStorage.setItem('userId', res.userId);
                 localStorage.setItem('username', res.username);
-                $('.signup-page').hide();
+                location.href = "myAccount.html";
             },
             error: function (res) {
                 alert("FALIED!");
@@ -97,13 +96,51 @@ function handleSignUp() {
 }
 
 function handleLogin() {
+    $('.login-form').submit(event => {
+        event.preventDefault();
 
+        let $form = $(".login-form");
 
+        let userData = {
+            username: $form.find('[name=username]').val(),
+            password: $form.find('[name=password]').val()
+        }
+
+        console.log(JSON.stringify(userData));
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/auth/login',
+            data: JSON.stringify(userData),
+            success: function (res) {
+                console.log(res);
+                localStorage.setItem('authToken', res.authToken);
+                localStorage.setItem('userId', res.userId);
+                localStorage.setItem('username', userData.username);
+                location.href = "myAccount.html";
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+                alert("Username or Password is incorrect");
+            },
+            dataType: 'json',
+            contentType: 'application/json'
+        });
+    });
 }
+
+function handleLogout() {
+    $("#logout").click(function () {
+        localStorage.clear();
+        location.href = "index.html";
+    });
+};
 
 $(function () {
     handleSignUp();
     handleLogin();
+    handleLogout();
     getUserProfile();
 
-})
+});

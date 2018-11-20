@@ -116,7 +116,7 @@ if it's not present, don't show loader */
 }
 
 .left {
-  width: 11%;
+  width: 17%;
 }
 
 .center {
@@ -124,8 +124,19 @@ if it's not present, don't show loader */
 }
 
 .right {
-  width: 10%;
-  margin-right: 15px;
+  width: 16%;
+  margin-right: 25px;
+}
+
+@media (max-width: 760px) {
+
+  #login,
+  #sign-up,
+  #myAccount,
+  #logout {
+    width: 10px;
+
+  }
 }
 
 #cocoLogo {
