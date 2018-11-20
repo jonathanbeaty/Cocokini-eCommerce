@@ -1,6 +1,9 @@
 $.getJSON('http://localhost:8080/api/products', function (data) {
 
-    $("#apiContainer").append(`<img id="onepic" src="${data[0].url}" style="width:100%;">`);
+    $("#apiContainer1").append(`<img id="onepic" src="${data[0].url}" style="width:100%;">`);
+    $("#apiContainer2").append(`<img id="twopic" src="${data[1].url}" style="width:100%;">`);
+    $("#apiContainer3").append(`<img id="threepic" src="${data[2].url}" style="width:100%;">`);
+    $("#apiContainer4").append(`<img id="threepic" src="${data[3].url}" style="width:100%;">`);
 
 });
 
