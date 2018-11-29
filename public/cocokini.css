@@ -1591,3 +1591,36 @@ Hide the images by default */ .mySlides {
   text-align: center;
   font-family: 'run_wildregular';
 }
+
+#instafeed {
+  max-width: 1080px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px;
+}
+
+#instafeed a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 50%;
+  background: white;
+}
+
+@media only screen and (min-width: 580px) {
+  #instafeed a {
+    width: 25%;
+  }
+}
+
+#instafeed a img {
+  display: block;
+  width: 100%;
+  opacity: 0.75;
+}
+
+#instafeed a img:hover {
+  opacity: 1;
+}

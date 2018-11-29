@@ -133,6 +133,44 @@ function handleLogin() {
     });
 }
 
+function uploadProfileEditor() {
+
+    $.getJSON('http://localhost:8080/api/users', function (data) {
+        debugger;
+        for (let i = 0; i < data.length; i++) {
+            if (localStorage.username === data[i].username) {
+                return `
+            <form action="#" class="signup-form">
+            <input id="firstName" type='text' name="firstName" value="${data[i].firstName}">
+            <input id="lastName" type="text" name="lastName" value="${data[i].lasttName}">
+            <input id="address" type="text" name="address" value="${data[i].address}">
+            <input id="city" type="text" name="city" value="${data[i].city}">
+            <input id="state" type="text" name="state" value="${data[i].state}">
+            <input id="zipCode" type="number" name="zipCode" pattern="[0-9]{5}" value="${data[i].zipcode}">
+            <input id="country" type="text" name="country" value="${data[i].country}">
+            <input id="topSize" type="text" name="topSize" value="${data[i].topSize}">
+            <input id="bottomSize" type="text" name="bottomSize" value="${data[i].bottomSize}">
+            <button id="editAccount">Save Profile Changes</button>
+            </form>
+    `
+            }
+        }
+    });
+
+};
+
+
+
+function editProfile() {
+    $("#profile-button").click(function () {
+        $("#profile-button").css('display', 'none');
+        $(".user-profile").css('display', 'none');
+        $(".profile-container").append(uploadProfileEditor());
+    });
+
+
+}
+
 function handleLogout() {
     $("#logout").click(function () {
         localStorage.clear();
@@ -145,5 +183,6 @@ $(function () {
     handleLogin();
     handleLogout();
     getUserProfile();
+    editProfile();
 
 });

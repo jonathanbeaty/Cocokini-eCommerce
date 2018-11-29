@@ -64,3 +64,18 @@ function showSlides() {
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 8000); // Change image every 8 seconds
 }
+
+$(document).ready(function () {
+  var feed = new Instafeed({
+    clientId: '	b0e3a9fc0441414b872d5d5ca4968e7c',
+    accessToken: '1762045494.1677ed0.f40a154d7d59400288110c16d672cd65',
+    get: 'user',
+    userId: 1762045494,
+    target: 'instafeed',
+    limit: 9,
+    sortBy: 'most-recent',
+    resolution: 'standard_resolution',
+    template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>'
+  });
+  feed.run();
+});

@@ -18,6 +18,10 @@ const {
 } = require('./products');
 
 const {
+  router: cartRouter
+} = require('./cart');
+
+const {
   router: authRouter,
   localStrategy,
   jwtStrategy
@@ -52,6 +56,7 @@ app.use('/api/users/', usersRouter);
 app.use('/api/events/', eventsRouter);
 app.use('/api/products/', productsRouter);
 app.use('/api/auth/', authRouter);
+app.use('/api/cart/', cartRouter);
 
 const jwtAuth = passport.authenticate('jwt', {
   session: false
