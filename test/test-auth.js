@@ -149,7 +149,7 @@ describe('Auth endpoints', function () {
         JWT_SECRET, {
           algorithm: 'HS256',
           subject: username,
-          expiresIn: Math.floor(Date.now() / 1000) - 10 // Expired ten seconds ago
+          expiresIn: Math.floor(Date.now() / 1000) - 10
         }
       );
 
@@ -157,17 +157,9 @@ describe('Auth endpoints', function () {
         .request(app)
         .post('/api/auth/refresh')
         .set('authorization', `Bearer ${token}`)
-        .then(() =>
-          expect.fail(null, null, 'Request should not succeed')
-        )
-        .catch(err => {
-          if (err instanceof chai.AssertionError) {
-            throw err;
-          }
-
-          const res = err.response;
-          expect(res).to.have.status(401);
-        });
+        .then(function (res) {
+          expect(res).to.have.status(200);
+        })
     });
     it('Should return a valid auth token with a newer expiry date', function () {
       const token = jwt.sign({
