@@ -1,9 +1,112 @@
 $.getJSON('http://localhost:8080/api/products', function (data) {
 
-    $("#apiContainer1").append(`<img id="onepic" src="${data[0].url}" style="width:100%;">`);
+    $("#apiContainer1").append(`<img id="onepic" src="${data[0].url[0]}" style="width:100%;">`);
     $("#apiContainer2").append(`<img id="twopic" src="${data[1].url}" style="width:100%;">`);
     $("#apiContainer3").append(`<img id="threepic" src="${data[2].url}" style="width:100%;">`);
     $("#apiContainer4").append(`<img id="threepic" src="${data[3].url}" style="width:100%;">`);
+
+    console.log(data[5].url);
+
+
+
+    $("#firstPic").append(`<img src="${data[5].url[0]}"
+    onmouseover="this.src='${data[5].url[1]}'"
+    onmouseout="this.src='${data[5].url[0]}'"
+    alt="Image 1" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    beach bandeau top $64
+    </div></a>`);
+
+    $("#secondPic").append(`<img src="${data[4].url[0]}"
+    onmouseover="this.src='${data[4].url[1]}'"
+    onmouseout="this.src='${data[4].url[0]}'"
+    alt="Image 2" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">high
+    neck top $58</div>
+    </a>`);
+
+    $("#thirdPic").append(`<img src="${data[6].url[0]}"
+    onmouseover="this.src='${data[6].url[1]}'"
+    onmouseout="this.src='${data[6].url[0]}'"
+    alt="Image 3" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">huka
+    tie top $72</div>
+    </a>`);
+
+    $("#fourthPic").append(`<img src="${data[7].url[0]}"
+    onmouseover="this.src='${data[7].url[1]}'"
+    onmouseout="this.src='${data[7].url[0]}'"
+    alt="Image 4" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">north
+    pack top $58</div>
+    </a>`);
+
+    $("#fifthPic").append(`<img src="${data[8].url[0]}"
+    onmouseover="this.src='${data[8].url[1]}'"
+    onmouseout="this.src='${data[8].url[0]}'"
+    alt="Image 5" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">raglan
+    ladder top $68</div>
+    </a>`);
+
+    $("#sixthPic").append(`<img src="${data[9].url[0]}"
+    onmouseover="this.src='${data[9].url[1]}'"
+    onmouseout="this.src='${data[9].url[0]}'"
+    alt="Image 6" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">villa
+    tropical top $62</div>
+    </a>`);
+
+    $("#seventhPic").append(`<img src="${data[10].url[0]}"
+    onmouseover="this.src='${data[10].url[1]}'"
+    onmouseout="this.src='${data[10].url[0]}'"
+    alt="Image 7" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
+    $39</div>
+    </a>`);
+
+    $("#eighthPic").append(`<img src="${data[11].url[0]}"
+    onmouseover="this.src='${data[11].url[1]}'"
+    onmouseout="this.src='${data[11].url[0]}'"
+    alt="Image 8" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
+    $39</div>
+    </a>`);
+
+    $("#ninthPic").append(`<img src="${data[12].url[0]}"
+    onmouseover="this.src='${data[12].url[1]}'"
+    onmouseout="this.src='${data[12].url[0]}'"
+    alt="Image 9" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
+    $39</div>
+    </a>`);
+
+    $("#tenthPic").append(`<img src="${data[13].url[0]}"
+    onmouseover="this.src='${data[13].url[1]}'"
+    onmouseout="this.src='${data[13].url[0]}'"
+    alt="Image 10" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
+    $39</div>
+    </a>`);
+
+    $("#eleventhPic").append(`<img src="${data[14].url[0]}"
+    onmouseover="this.src='${data[14].url[1]}'"
+    onmouseout="this.src='${data[14].url[0]}'"
+    alt="Image 11" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
+    $39</div>
+    </a>`);
+
+    $("#twelfthPic").append(`<img src="${data[15].url[0]}"
+    onmouseover="this.src='${data[15].url[1]}'"
+    onmouseout="this.src='${data[15].url[0]}'"
+    alt="Image 12" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
+    $39</div>
+    </a>`);
+
+
+
 
 });
 
@@ -17,6 +120,7 @@ $.getJSON('http://localhost:8080/api/events', function (data) {
     christi, tx</div>`);
 
 });
+
 
 function getUserProfile() {
 

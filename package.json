@@ -16,6 +16,7 @@
     "bson": "^4.0.0",
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
+    "heroku": "^7.18.10",
     "instafeed.js": "^1.4.1",
     "jsonwebtoken": "^8.2.0",
     "mongoose": "^5.0.6",

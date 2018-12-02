@@ -39,7 +39,7 @@ router.post('/', jsonParser, (req, res) => {
         });
     }
 
-    const stringFields = ['bikiniType', 'name', 'url'];
+    const stringFields = ['bikiniType', 'name'];
     const nonStringField = stringFields.find(
         field => field in req.body && typeof req.body[field] !== 'string'
     );

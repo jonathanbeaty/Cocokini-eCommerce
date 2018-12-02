@@ -115,6 +115,10 @@ if it's not present, don't show loader */
   padding-bottom: 25px;
 }
 
+.cd-gallery li:hover {
+  cursor: pointer;
+}
+
 .left {
   width: 17%;
 }

@@ -12,9 +12,9 @@ const ProductsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    url: {
+    url: [{
         type: String
-    }
+    }]
 });
 
 ProductsSchema.methods.serialize = function () {
