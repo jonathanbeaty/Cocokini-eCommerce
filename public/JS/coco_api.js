@@ -5,19 +5,15 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     $("#apiContainer3").append(`<img id="threepic" src="${data[2].url}" style="width:100%;">`);
     $("#apiContainer4").append(`<img id="threepic" src="${data[3].url}" style="width:100%;">`);
 
-    console.log(data[5].url);
-
-
-
     $("#firstPic").append(`<img src="${data[5].url[0]}"
     onmouseover="this.src='${data[5].url[1]}'"
     onmouseout="this.src='${data[5].url[0]}'"
     alt="Image 1" />
     <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
-    beach bandeau top $64
-    </div></a>`);
+    rincon one peice $100
+    </div>`);
 
-    $("#secondPic").append(`<img src="${data[4].url[0]}"
+    $("#secondPic").append(`<a href="top1.html"><img src="${data[4].url[0]}"
     onmouseover="this.src='${data[4].url[1]}'"
     onmouseout="this.src='${data[4].url[0]}'"
     alt="Image 2" />
@@ -25,7 +21,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     neck top $58</div>
     </a>`);
 
-    $("#thirdPic").append(`<img src="${data[6].url[0]}"
+    $("#thirdPic").append(`<a href="top1.html"><img src="${data[6].url[0]}"
     onmouseover="this.src='${data[6].url[1]}'"
     onmouseout="this.src='${data[6].url[0]}'"
     alt="Image 3" />
@@ -33,7 +29,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     tie top $72</div>
     </a>`);
 
-    $("#fourthPic").append(`<img src="${data[7].url[0]}"
+    $("#fourthPic").append(`<a href="top1.html"><img src="${data[7].url[0]}"
     onmouseover="this.src='${data[7].url[1]}'"
     onmouseout="this.src='${data[7].url[0]}'"
     alt="Image 4" />
@@ -41,7 +37,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     pack top $58</div>
     </a>`);
 
-    $("#fifthPic").append(`<img src="${data[8].url[0]}"
+    $("#fifthPic").append(`<a href="top1.html"><img src="${data[8].url[0]}"
     onmouseover="this.src='${data[8].url[1]}'"
     onmouseout="this.src='${data[8].url[0]}'"
     alt="Image 5" />
@@ -49,7 +45,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     ladder top $68</div>
     </a>`);
 
-    $("#sixthPic").append(`<img src="${data[9].url[0]}"
+    $("#sixthPic").append(`<a href="top1.html"><img src="${data[9].url[0]}"
     onmouseover="this.src='${data[9].url[1]}'"
     onmouseout="this.src='${data[9].url[0]}'"
     alt="Image 6" />
@@ -57,7 +53,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     tropical top $62</div>
     </a>`);
 
-    $("#seventhPic").append(`<img src="${data[10].url[0]}"
+    $("#seventhPic").append(`<a href="top1.html"><img src="${data[10].url[0]}"
     onmouseover="this.src='${data[10].url[1]}'"
     onmouseout="this.src='${data[10].url[0]}'"
     alt="Image 7" />
@@ -65,7 +61,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     $39</div>
     </a>`);
 
-    $("#eighthPic").append(`<img src="${data[11].url[0]}"
+    $("#eighthPic").append(`<a href="top1.html"><img src="${data[11].url[0]}"
     onmouseover="this.src='${data[11].url[1]}'"
     onmouseout="this.src='${data[11].url[0]}'"
     alt="Image 8" />
@@ -73,7 +69,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     $39</div>
     </a>`);
 
-    $("#ninthPic").append(`<img src="${data[12].url[0]}"
+    $("#ninthPic").append(`<a href="top1.html"><img src="${data[12].url[0]}"
     onmouseover="this.src='${data[12].url[1]}'"
     onmouseout="this.src='${data[12].url[0]}'"
     alt="Image 9" />
@@ -81,7 +77,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     $39</div>
     </a>`);
 
-    $("#tenthPic").append(`<img src="${data[13].url[0]}"
+    $("#tenthPic").append(`<a href="top1.html"><img src="${data[13].url[0]}"
     onmouseover="this.src='${data[13].url[1]}'"
     onmouseout="this.src='${data[13].url[0]}'"
     alt="Image 10" />
@@ -89,7 +85,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     $39</div>
     </a>`);
 
-    $("#eleventhPic").append(`<img src="${data[14].url[0]}"
+    $("#eleventhPic").append(`<a href="top1.html"><img src="${data[14].url[0]}"
     onmouseover="this.src='${data[14].url[1]}'"
     onmouseout="this.src='${data[14].url[0]}'"
     alt="Image 11" />
@@ -97,16 +93,13 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     $39</div>
     </a>`);
 
-    $("#twelfthPic").append(`<img src="${data[15].url[0]}"
+    $("#twelfthPic").append(`<a href="top1.html"><img src="${data[15].url[0]}"
     onmouseover="this.src='${data[15].url[1]}'"
     onmouseout="this.src='${data[15].url[0]}'"
     alt="Image 12" />
     <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
     $39</div>
     </a>`);
-
-
-
 
 });
 
@@ -120,7 +113,6 @@ $.getJSON('http://localhost:8080/api/events', function (data) {
     christi, tx</div>`);
 
 });
-
 
 function getUserProfile() {
 
@@ -260,10 +252,7 @@ function uploadProfileEditor() {
             }
         }
     });
-
 };
-
-
 
 function editProfile() {
     $("#profile-button").click(function () {
@@ -271,8 +260,6 @@ function editProfile() {
         $(".user-profile").css('display', 'none');
         $(".profile-container").append(uploadProfileEditor());
     });
-
-
 }
 
 function handleLogout() {
@@ -282,11 +269,160 @@ function handleLogout() {
     });
 };
 
+function handleNewsLetter() {
+    $(".email-button").click(function () {
+        let email = $(".email").val();
+        if (email.length > 0) {
+            alert('Thank you for joining our Newsletter! -Lauren, creator of Cocokini');
+        } else {
+            alert('Please enter your email first, thank you!');
+        }
+    });
+}
+
+function handleProductsClick() {
+    $("#firstPic").click(function () {
+        $(".cd-gallery").css('display', 'none');
+        $(".cd-tab-filter-wrapper").css('display', 'none');
+
+        $.getJSON('http://localhost:8080/api/products', function (data) {
+
+            $(".bikini-product-page").append(` 
+
+        <div class="bikini-product-container">
+            <div class="bikini-grid1">
+                <div class="bikini-img-container">
+                    <img id="bikini-display1" src="${data[5].url[0]}">
+                    <img id="bikini-display2" src="${data[5].url[1]}">
+                    <img id="bikini-display3" src="${data[5].url[2]}">
+                    <img id="bikini-display4" src="${data[5].url[3]}">
+                </div>
+        
+                <div class="bikini-thumbnail">
+                    <img id="clickMe1" class="bikini-thumbnails" src="${data[5].url[0]}">
+                    <img id="clickMe2" class="bikini-thumbnails" src="${data[5].url[1]}">
+                    <img id="clickMe3" class="bikini-thumbnails" src="${data[5].url[2]}">
+                    <img id="clickMe4" class="bikini-thumbnails" src="${data[5].url[3]}">
+                </div>
+            </div>
+
+            <div class="bikini-grid2">
+                <div class="bikini-buy-details">
+                    <div class="product-details" style="font-family:'run_wildregular'; font-size: 28px;">rincon one peice</div>
+                    <p class="price" style="font-size: 15px;">$100.00</p>
+                    <hr>
+                    <div class="product-details" style=" font-size: 15px;">fabric</div>
+                    <div class="colors">
+                        <div class="color-item1">
+                            <img class="img1" src="https://c1.staticflickr.com/1/944/42169965352_a0bc1fef3a_o.jpg"
+                                height="50px;">
+                            <div class="fabric-name1">
+                                <div class="fn1" style="font-family:'run_wildregular';">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item2">
+                            <img class="img2" src="https://c1.staticflickr.com/1/974/27370825057_cdaf041d60_o.png"
+                                height="50px;">
+                            <div class="fabric-name2">
+                                <div class="fn2" style="font-family:'run_wildregular';color:aliceblue;">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item3">
+                            <img class="img3" src="https://c1.staticflickr.com/1/944/42169965352_a0bc1fef3a_o.jpg"
+                                height="50px;">
+                            <div class="fabric-name3">
+                                <div class="fn3" style="font-family:'run_wildregular';">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item4">
+                            <img class="img4" src="https://c1.staticflickr.com/1/974/27370825057_cdaf041d60_o.png"
+                                height="50px;">
+                            <div class="fabric-name4">
+                                <div class="fn4" style="font-family:'run_wildregular';color:aliceblue;">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item5">
+                            <img class="img5" src="https://c1.staticflickr.com/1/944/42169965352_a0bc1fef3a_o.jpg"
+                                height="50px;">
+                            <div class="fabric-name5">
+                                <div class="fn5" style="font-family:'run_wildregular';">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item6">
+                            <img class="img6" src="https://c1.staticflickr.com/1/974/27370825057_cdaf041d60_o.png"
+                                height="50px;">
+                            <div class="fabric-name6">
+                                <div class="fn6" style="font-family:'run_wildregular';color:aliceblue;">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item7">
+                            <img class="img7" src="https://c1.staticflickr.com/1/944/42169965352_a0bc1fef3a_o.jpg"
+                                height="50px;">
+                            <div class="fabric-name7">
+                                <div class="fn7" style="font-family:'run_wildregular';">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item8">
+                            <img class="img8" src="https://c1.staticflickr.com/1/974/27370825057_cdaf041d60_o.png"
+                                height="50px;">
+                            <div class="fabric-name8">
+                                <div class="fn8" style="font-family:'run_wildregular';color:aliceblue;">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item9">
+                            <img class="img9" src="https://c1.staticflickr.com/1/944/42169965352_a0bc1fef3a_o.jpg"
+                                height="50px;">
+                            <div class="fabric-name9">
+                                <div class="fn9" style="font-family:'run_wildregular';">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item10">
+                            <img class="img10" src="https://c1.staticflickr.com/1/944/42169965352_a0bc1fef3a_o.jpg"
+                                height="50px;">
+                            <div class="fabric-name10">
+                                <div class="fn10" style="font-family:'run_wildregular';">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item11">
+                            <img class="img11" src="https://c1.staticflickr.com/1/944/42169965352_a0bc1fef3a_o.jpg"
+                                height="50px;">
+                            <div class="fabric-name11">
+                                <div class="fn11" style="font-family:'run_wildregular';">palmalicious</div>
+                            </div>
+                        </div>
+                        <div class="color-item12">
+                            <img class="img12" src="https://c1.staticflickr.com/1/944/42169965352_a0bc1fef3a_o.jpg"
+                                height="50px;">
+                            <div class="fabric-name12">
+                                <div class="fn12" style="font-family:'run_wildregular';">palmalicious</div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="product-details" style="font-size: 15px;">sizes</div>
+                    <div class="sizes">
+                        <p class="size-1" style="font-family:'run_wildregular';">XS</p>
+                        <p class="size-1" style="font-family:'run_wildregular';">S</p>
+                        <p class="size-1" style="font-family:'run_wildregular';">M</p>
+                        <p class="size-1" style="font-family:'run_wildregular';">L</p>
+                        <p class="size-1" style="font-family:'run_wildregular';">XL</p>
+                    </div>
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+        `);
+        });
+    });
+};
+
 $(function () {
     handleSignUp();
     handleLogin();
     handleLogout();
     getUserProfile();
     editProfile();
-
+    handleNewsLetter();
+    handleProductsClick();
 });
