@@ -281,35 +281,43 @@ function handleNewsLetter() {
 }
 
 function handleProductsClick() {
-    $("#firstPic").click(function () {
+    $(".cd-gallery li").click(function (event) {
+        var target = event.target;
+        var altImage = target.alt;
+        var alteredAlt = altImage.replace(/[^0-9\.]+/g, "");
+        var picOrder = Number(alteredAlt);
+
         $(".cd-gallery").css('display', 'none');
         $(".cd-tab-filter-wrapper").css('display', 'none');
 
         $.getJSON('http://localhost:8080/api/products', function (data) {
 
-            $(".bikini-product-page").append(` 
+            for (let i = 0; i < data.length; i++) {
+                if (picOrder === data[i].order) {
+
+                    $(".bikini-product-page").append(` 
 
         <div class="bikini-product-container">
             <div class="bikini-grid1">
                 <div class="bikini-img-container">
-                    <img id="bikini-display1" src="${data[5].url[0]}">
-                    <img id="bikini-display2" src="${data[5].url[1]}">
-                    <img id="bikini-display3" src="${data[5].url[2]}">
-                    <img id="bikini-display4" src="${data[5].url[3]}">
+                    <img id="bikini-display1" src="${data[i].url[0]}">
+                    <img id="bikini-display2" src="${data[i].url[1]}">
+                    <img id="bikini-display3" src="${data[i].url[2]}">
+                    <img id="bikini-display4" src="${data[i].url[3]}">
                 </div>
         
                 <div class="bikini-thumbnail">
-                    <img id="clickMe1" class="bikini-thumbnails" src="${data[5].url[0]}">
-                    <img id="clickMe2" class="bikini-thumbnails" src="${data[5].url[1]}">
-                    <img id="clickMe3" class="bikini-thumbnails" src="${data[5].url[2]}">
-                    <img id="clickMe4" class="bikini-thumbnails" src="${data[5].url[3]}">
+                    <img id="clickMe1" class="bikini-thumbnails" src="${data[i].url[0]}">
+                    <img id="clickMe2" class="bikini-thumbnails" src="${data[i].url[1]}">
+                    <img id="clickMe3" class="bikini-thumbnails" src="${data[i].url[2]}">
+                    <img id="clickMe4" class="bikini-thumbnails" src="${data[i].url[3]}">
                 </div>
             </div>
 
             <div class="bikini-grid2">
                 <div class="bikini-buy-details">
-                    <div class="product-details" style="font-family:'run_wildregular'; font-size: 28px;">rincon one peice</div>
-                    <p class="price" style="font-size: 15px;">$100.00</p>
+                    <div class="product-details" style="font-family:'run_wildregular'; font-size: 28px;">${data[i].name}</div>
+                    <p class="price" style="font-size: 15px;">$${data[i].price}</p>
                     <hr>
                     <div class="product-details" style=" font-size: 15px;">fabric</div>
                     <div class="colors">
@@ -408,12 +416,60 @@ function handleProductsClick() {
                         <p class="size-1" style="font-family:'run_wildregular';">XL</p>
                     </div>
                     <hr>
-
+                    <div class="product-details" style="font-size: 15px;"></div>
+                    <button>Add to Cart</button>
                 </div>
             </div>
         </div>
+
+       
         `);
+                    break;
+                }
+            }
+            init();
+            handleSliderClicks();
         });
+    });
+};
+
+function init() {
+    $("#clickMe1").click(function () {
+        $("#bikini-display1").css('display', 'block');
+        $("#bikini-display3").css('display', 'none');
+        $("#bikini-display4").css('display', 'none');
+        $("#bikini-display2").css('display', 'none');
+    });
+
+    $("#clickMe2").click(function () {
+        $("#bikini-display2").css('display', 'block');
+        $("#bikini-display3").css('display', 'none');
+        $("#bikini-display4").css('display', 'none');
+        $("#bikini-display1").css('display', 'none');
+
+    });
+
+    $("#clickMe3").click(function () {
+        $("#bikini-display3").css('display', 'block');
+        $("#bikini-display1").css('display', 'none');
+        $("#bikini-display4").css('display', 'none');
+        $("#bikini-display2").css('display', 'none');
+    });
+
+    $("#clickMe4").click(function () {
+        $("#bikini-display4").css('display', 'block');
+        $("#bikini-display3").css('display', 'none');
+        $("#bikini-display1").css('display', 'none');
+        $("#bikini-display2").css('display', 'none');
+    });
+}
+
+function handleSliderClicks() {
+    $(".bikini-thumbnail img").click(function () {
+        $('.thumbnail-clicked').removeClass('thumbnail-clicked');
+        $('.thumbnail-clicked').addClass('bikini-thumbnails');
+        $(this).addClass('thumbnail-clicked');
+        $(this).find('.bikini-thumbnails').removeClass('bikini-thumbnails');
     });
 };
 

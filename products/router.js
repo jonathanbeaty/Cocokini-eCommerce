@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', jsonParser, (req, res) => {
-    const requiredFields = ['bikiniType', 'name', 'url'];
+    const requiredFields = ['bikiniType', 'name', 'price', 'order', 'url'];
     const missingField = requiredFields.find(field => !(field in req.body));
 
     if (missingField) {
@@ -57,6 +57,8 @@ router.post('/', jsonParser, (req, res) => {
         .create({
             bikiniType: req.body.bikiniType,
             name: req.body.name,
+            price: req.body.price,
+            order: req.body.order,
             url: req.body.url
         })
         .then(product => res.status(201).json(product.serialize()))
@@ -80,7 +82,7 @@ router.put('/:id', jsonParser, (req, res) => {
     }
 
     const toUpdate = {};
-    const updateableFields = ['bikiniType', 'name', 'url'];
+    const updateableFields = ['bikiniType', 'name', 'price', 'order', 'url'];
 
     updateableFields.forEach(field => {
         if (field in req.body) {

@@ -12,6 +12,12 @@ const ProductsSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    price: {
+        type: Number
+    },
+    order: {
+        type: Number
+    },
     url: [{
         type: String
     }]
@@ -22,6 +28,8 @@ ProductsSchema.methods.serialize = function () {
         id: this._id,
         bikiniType: this.bikiniType,
         name: this.name,
+        price: this.price,
+        order: this.order,
         url: this.url
     };
 };
