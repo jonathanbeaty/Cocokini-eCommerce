@@ -10,96 +10,96 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
     onmouseout="this.src='${data[5].url[0]}'"
     alt="Image 1" />
     <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
-    rincon one peice $100
+    ${data[5].name} $${data[5].price}
     </div>`);
 
-    $("#secondPic").append(`<a href="top1.html"><img src="${data[4].url[0]}"
+    $("#secondPic").append(`<img src="${data[4].url[0]}"
     onmouseover="this.src='${data[4].url[1]}'"
     onmouseout="this.src='${data[4].url[0]}'"
     alt="Image 2" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">high
-    neck top $58</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[4].name} $${data[4].price}</div>
+    `);
 
-    $("#thirdPic").append(`<a href="top1.html"><img src="${data[6].url[0]}"
+    $("#thirdPic").append(`<img src="${data[6].url[0]}"
     onmouseover="this.src='${data[6].url[1]}'"
     onmouseout="this.src='${data[6].url[0]}'"
     alt="Image 3" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">huka
-    tie top $72</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[6].name} $${data[6].price}</div>
+    `);
 
-    $("#fourthPic").append(`<a href="top1.html"><img src="${data[7].url[0]}"
+    $("#fourthPic").append(`<img src="${data[7].url[0]}"
     onmouseover="this.src='${data[7].url[1]}'"
     onmouseout="this.src='${data[7].url[0]}'"
     alt="Image 4" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">north
-    pack top $58</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[7].name} $${data[7].price}</div>
+    `);
 
-    $("#fifthPic").append(`<a href="top1.html"><img src="${data[8].url[0]}"
+    $("#fifthPic").append(`<img src="${data[8].url[0]}"
     onmouseover="this.src='${data[8].url[1]}'"
     onmouseout="this.src='${data[8].url[0]}'"
     alt="Image 5" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">raglan
-    ladder top $68</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[8].name} $${data[8].price}</div>
+    `);
 
-    $("#sixthPic").append(`<a href="top1.html"><img src="${data[9].url[0]}"
+    $("#sixthPic").append(`<img src="${data[9].url[0]}"
     onmouseover="this.src='${data[9].url[1]}'"
     onmouseout="this.src='${data[9].url[0]}'"
     alt="Image 6" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">villa
-    tropical top $62</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[9].name} $${data[9].price}</div>
+    `);
 
-    $("#seventhPic").append(`<a href="top1.html"><img src="${data[10].url[0]}"
+    $("#seventhPic").append(`<img src="${data[10].url[0]}"
     onmouseover="this.src='${data[10].url[1]}'"
     onmouseout="this.src='${data[10].url[0]}'"
     alt="Image 7" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
-    $39</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[10].name} $${data[10].price}</div>
+    `);
 
-    $("#eighthPic").append(`<a href="top1.html"><img src="${data[11].url[0]}"
+    $("#eighthPic").append(`<img src="${data[11].url[0]}"
     onmouseover="this.src='${data[11].url[1]}'"
     onmouseout="this.src='${data[11].url[0]}'"
     alt="Image 8" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
-    $39</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[11].name} $${data[11].price}</div>
+    `);
 
-    $("#ninthPic").append(`<a href="top1.html"><img src="${data[12].url[0]}"
+    $("#ninthPic").append(`<img src="${data[12].url[0]}"
     onmouseover="this.src='${data[12].url[1]}'"
     onmouseout="this.src='${data[12].url[0]}'"
     alt="Image 9" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
-    $39</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[12].name} $${data[12].price}</div>
+    `);
 
-    $("#tenthPic").append(`<a href="top1.html"><img src="${data[13].url[0]}"
+    $("#tenthPic").append(`<img src="${data[13].url[0]}"
     onmouseover="this.src='${data[13].url[1]}'"
     onmouseout="this.src='${data[13].url[0]}'"
     alt="Image 10" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
-    $39</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[13].name} $${data[13].price}</div>
+    `);
 
-    $("#eleventhPic").append(`<a href="top1.html"><img src="${data[14].url[0]}"
+    $("#eleventhPic").append(`<img src="${data[14].url[0]}"
     onmouseover="this.src='${data[14].url[1]}'"
     onmouseout="this.src='${data[14].url[0]}'"
     alt="Image 11" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
-    $39</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[14].name} $${data[14].price}</div>
+    `);
 
-    $("#twelfthPic").append(`<a href="top1.html"><img src="${data[15].url[0]}"
+    $("#twelfthPic").append(`<img src="${data[15].url[0]}"
     onmouseover="this.src='${data[15].url[1]}'"
     onmouseout="this.src='${data[15].url[0]}'"
     alt="Image 12" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">matapalo
-    $39</div>
-    </a>`);
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[15].name} $${data[15].price}</div>
+    `);
 
 });
 
@@ -405,6 +405,13 @@ function handleProductsClick() {
                                 <div class="fn12" style="font-family:'run_wildregular';">palmalicious</div>
                             </div>
                         </div>
+                        <select id="fabric-selection">
+                            <option value="Jungle Dream">Jungle Dream</option>
+                            <option value="Run Wild">Run Wild</option>
+                            <option value="Fall Flora">Fall Flora</option>
+                            <option value="Sunburst">Sunburst</option>
+                            <option value="Derive">Derive</option>
+                        </select>
                     </div>
                     <hr>
                     <div class="product-details" style="font-size: 15px;">sizes</div>
@@ -415,9 +422,16 @@ function handleProductsClick() {
                         <p class="size-1" style="font-family:'run_wildregular';">L</p>
                         <p class="size-1" style="font-family:'run_wildregular';">XL</p>
                     </div>
+                    <select id="size-selection">
+                        <option value="XS">Xtra Small</option>
+                        <option value="S">Small</option>
+                        <option value="M">Medium</option>
+                        <option value="L">Large</option>
+                        <option value="XL">Extra Large</option>
+                    </select>
                     <hr>
                     <div class="product-details" style="font-size: 15px;"></div>
-                    <button>Add to Cart</button>
+                    <button id="addToCart" alt="${picOrder}">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -429,6 +443,7 @@ function handleProductsClick() {
             }
             init();
             handleSliderClicks();
+            handleAddToCart();
         });
     });
 };
@@ -472,6 +487,56 @@ function handleSliderClicks() {
         $(this).find('.bikini-thumbnails').removeClass('bikini-thumbnails');
     });
 };
+
+function addToCart(addCartItem) {
+
+    $.ajax({
+        type: 'POST',
+        url: '/api/cart',
+        data: JSON.stringify(addCartItem),
+        success: function (res) {
+            location.href = "tops.html";
+        },
+        error: function (res) {
+            alert("FALIED!");
+        },
+        dataType: 'json',
+        contentType: 'application/json'
+    });
+
+    let cartItems = $("#cart-items").html();
+    console.log(cartItems);
+}
+
+function handleAddToCart() {
+    $("#addToCart").click(function (event) {
+        var alt = $(this).attr("alt")
+        let fabric = $("#fabric-selection").val();
+        let size = $("#size-selection").val();
+
+        console.log(alt);
+
+        if (localStorage.authToken) {
+            $.getJSON('http://localhost:8080/api/products', function (data) {
+
+                for (let i = 0; i < data.length; i++) {
+                    if (alt === data[i].order) {
+
+                        let cartItem = {
+                            username: localStorage.username,
+                            product: data[i].name,
+                            size: size,
+                            fabric: fabric,
+                            price: data[i].price
+                        }
+                        addToCart(cartItem);
+                    }
+                }
+            });
+        }
+    });
+}
+
 
 $(function () {
     handleSignUp();

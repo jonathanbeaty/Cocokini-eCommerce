@@ -11,6 +11,15 @@ const CartSchema = mongoose.Schema({
     product: {
         type: String,
         required: true
+    },
+    size: {
+        type: String
+    },
+    fabric: {
+        type: String
+    },
+    price: {
+        type: Number
     }
 });
 
@@ -18,7 +27,10 @@ CartSchema.methods.serialize = function () {
     return {
         id: this._id,
         username: this.username,
-        product: this.product
+        product: this.product,
+        size: this.size,
+        fabric: this.fabric,
+        price: this.price
     };
 };
 

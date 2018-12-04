@@ -119,6 +119,10 @@ if it's not present, don't show loader */
   cursor: pointer;
 }
 
+.size-1 li:hover {
+  cursor: pointer;
+}
+
 .left {
   width: 17%;
 }

@@ -15,6 +15,7 @@ const jsonParser = bodyParser.json();
 router.get('/', (req, res) => {
     Products
         .find()
+        .sort('order')
         .then(Products => {
             res.json(Products.map(product => product.serialize()));
         })

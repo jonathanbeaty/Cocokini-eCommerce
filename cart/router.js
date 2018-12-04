@@ -39,7 +39,7 @@ router.post('/', jsonParser, (req, res) => {
         });
     }
 
-    const stringFields = ['username', 'product'];
+    const stringFields = ['username', 'product', 'size', 'fabric'];
     const nonStringField = stringFields.find(
         field => field in req.body && typeof req.body[field] !== 'string'
     );
@@ -56,7 +56,10 @@ router.post('/', jsonParser, (req, res) => {
     Cart
         .create({
             username: req.body.username,
-            product: req.body.product
+            product: req.body.product,
+            size: req.body.size,
+            fabric: req.body.fabric,
+            price: req.body.price
         })
         .then(cart => res.status(201).json(cart.serialize()))
         .catch(err => {
@@ -79,7 +82,7 @@ router.put('/:id', jsonParser, (req, res) => {
     }
 
     const toUpdate = {};
-    const updateableFields = ['username', 'product'];
+    const updateableFields = ['username', 'product', 'size', 'fabric', 'price'];
 
     updateableFields.forEach(field => {
         if (field in req.body) {
