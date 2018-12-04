@@ -1,4 +1,4 @@
-$.getJSON('http://localhost:8080/api/products', function (data) {
+$.getJSON('/api/products', function (data) {
 
     $("#apiContainer1").append(`<img id="onepic" src="${data[0].url[0]}" style="width:100%;">`);
     $("#apiContainer2").append(`<img id="twopic" src="${data[1].url}" style="width:100%;">`);
@@ -103,7 +103,7 @@ $.getJSON('http://localhost:8080/api/products', function (data) {
 
 });
 
-$.getJSON('http://localhost:8080/api/events', function (data) {
+$.getJSON('/api/events', function (data) {
 
     $("#farmers").append(`<img class="ev1" src="${data[0].url}" height="225px;"> <div style="font-size: 20px;" class="centered">the island farmers and art market</br>·
     june 8th ·</br>corpus christi, tx</div>`);
@@ -118,7 +118,7 @@ function getUserProfile() {
 
     if (localStorage.authToken) {
 
-        $.getJSON('http://localhost:8080/api/users', function (data) {
+        $.getJSON('/api/users', function (data) {
             for (let i = 0; i < data.length; i++) {
                 if (localStorage.username === data[i].username) {
                     $(".user-profile").append(`<pre><b>First Name:</b> ${data[i].firstName}</pre>`);
@@ -231,7 +231,7 @@ function handleLogin() {
 
 function uploadProfileEditor() {
 
-    $.getJSON('http://localhost:8080/api/users', function (data) {
+    $.getJSON('/api/users', function (data) {
         debugger;
         for (let i = 0; i < data.length; i++) {
             if (localStorage.username === data[i].username) {
@@ -290,7 +290,7 @@ function handleProductsClick() {
         $(".cd-gallery").css('display', 'none');
         $(".cd-tab-filter-wrapper").css('display', 'none');
 
-        $.getJSON('http://localhost:8080/api/products', function (data) {
+        $.getJSON('/api/products', function (data) {
 
             for (let i = 0; i < data.length; i++) {
                 if (picOrder === data[i].order) {
@@ -517,7 +517,7 @@ function handleAddToCart() {
         console.log(alt);
 
         if (localStorage.authToken) {
-            $.getJSON('http://localhost:8080/api/products', function (data) {
+            $.getJSON('/api/products', function (data) {
 
                 for (let i = 0; i < data.length; i++) {
                     if (alt === data[i].order) {
