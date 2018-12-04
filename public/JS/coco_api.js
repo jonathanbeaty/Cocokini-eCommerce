@@ -1,24 +1,24 @@
 $.getJSON('/api/products', function (data) {
 
     $("#apiContainer1").append(`<img id="onepic" src="${data[0].url[0]}" style="width:100%;">`);
-    $("#apiContainer2").append(`<img id="twopic" src="${data[1].url}" style="width:100%;">`);
-    $("#apiContainer3").append(`<img id="threepic" src="${data[2].url}" style="width:100%;">`);
-    $("#apiContainer4").append(`<img id="threepic" src="${data[3].url}" style="width:100%;">`);
+    $("#apiContainer2").append(`<img id="twopic" src="${data[1].url[0]}" style="width:100%;">`);
+    $("#apiContainer3").append(`<img id="threepic" src="${data[2].url[0]}" style="width:100%;">`);
+    $("#apiContainer4").append(`<img id="fourpic" src="${data[3].url[0]}" style="width:100%;">`);
 
-    $("#firstPic").append(`<img src="${data[5].url[0]}"
-    onmouseover="this.src='${data[5].url[1]}'"
-    onmouseout="this.src='${data[5].url[0]}'"
-    alt="Image 1" />
-    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
-    ${data[5].name} $${data[5].price}
-    </div>`);
-
-    $("#secondPic").append(`<img src="${data[4].url[0]}"
+    $("#firstPic").append(`<img src="${data[4].url[0]}"
     onmouseover="this.src='${data[4].url[1]}'"
     onmouseout="this.src='${data[4].url[0]}'"
+    alt="Image 1" />
+    <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
+    ${data[4].name} $${data[4].price}
+    </div>`);
+
+    $("#secondPic").append(`<img src="${data[5].url[0]}"
+    onmouseover="this.src='${data[5].url[1]}'"
+    onmouseout="this.src='${data[5].url[0]}'"
     alt="Image 2" />
     <div class="tops-price" style="font-family:'run_wildregular'; text-align: center;font-size: 22px;">
-    ${data[4].name} $${data[4].price}</div>
+    ${data[5].name} $${data[5].price}</div>
     `);
 
     $("#thirdPic").append(`<img src="${data[6].url[0]}"
@@ -509,18 +509,17 @@ function addToCart(addCartItem) {
 }
 
 function handleAddToCart() {
-    $("#addToCart").click(function (event) {
+    $("#addToCart").click(function () {
         var alt = $(this).attr("alt")
+        var altNumber = Number(alt);
         let fabric = $("#fabric-selection").val();
         let size = $("#size-selection").val();
-
-        console.log(alt);
 
         if (localStorage.authToken) {
             $.getJSON('/api/products', function (data) {
 
                 for (let i = 0; i < data.length; i++) {
-                    if (alt === data[i].order) {
+                    if (altNumber === data[i].order) {
 
                         let cartItem = {
                             username: localStorage.username,
@@ -529,7 +528,9 @@ function handleAddToCart() {
                             fabric: fabric,
                             price: data[i].price
                         }
+                        console.log(cartItem);
                         addToCart(cartItem);
+                        break;
                     }
                 }
             });

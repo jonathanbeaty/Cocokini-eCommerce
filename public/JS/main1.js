@@ -123,18 +123,12 @@ jQuery(document).ready(function ($) {
 	});
 });
 
-/*****************************************************
-	MixItUp - Define a single object literal 
-	to contain all filter custom functionality
-*****************************************************/
 var buttonFilter = {
-	// Declare any variables we will need as properties of the object
 	$filters: null,
 	groups: [],
 	outputArray: [],
 	outputString: '',
 
-	// The "init" method will run on document ready and cache any jQuery objects we will need.
 	init: function () {
 		var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "buttonFilter" object so that we can share methods and properties between all parts of the object.
 
