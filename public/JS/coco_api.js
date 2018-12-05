@@ -131,17 +131,45 @@ function getUserProfile() {
                     $(".user-profile").append(`<pre><b>Bottom Size:</b> ${data[i].bottomSize}</pre>`);
                 }
             }
-        })
-    } else return;
+        });
+
+        bikiniCount = 1;
+
+        $.getJSON('/api/cart', function (data) {
+            for (let i = 0; i < data.length; i++) {
+                if (localStorage.username === data[i].username) {
+                    $(".active-cart-profile").append(`
+                    <h3>Bikini ${bikiniCount}:<h3>
+                    <pre>Bikini: ${data[i].product}</pre>
+                    <pre>Size: ${data[i].size}</pre>
+                    <pre>Fabric: ${data[i].fabric}</pre>
+                    <pre>Price: $${data[i].price}.00</pre>
+                    `)
+                    bikiniCount++;
+                }
+            }
+        });
+    }
 }
 
 $(function () {
     if (localStorage.authToken) {
         $('#login').css('display', 'none');
         $('#sign-up').css('display', 'none');
+
+        $.getJSON('/api/cart', function (data) {
+            var cartTotal = 0;
+            for (let i = 0; i < data.length; i++) {
+                if (localStorage.username === data[i].username) {
+                    cartTotal++;
+                }
+            }
+            $("#cart-items").html(cartTotal);
+        });
     } else {
         $('#my-account').css('display', 'none');
         $('#logout').css('display', 'none');
+        $("#cart-items").html(0);
     }
 });
 
@@ -205,8 +233,6 @@ function handleLogin() {
             password: $form.find('[name=password]').val()
         }
 
-        console.log(JSON.stringify(userData));
-
         $.ajax({
             type: 'POST',
             url: '/api/auth/login',
@@ -232,7 +258,6 @@ function handleLogin() {
 function uploadProfileEditor() {
 
     $.getJSON('/api/users', function (data) {
-        debugger;
         for (let i = 0; i < data.length; i++) {
             if (localStorage.username === data[i].username) {
                 return `
@@ -504,8 +529,6 @@ function addToCart(addCartItem) {
         contentType: 'application/json'
     });
 
-    let cartItems = $("#cart-items").html();
-    console.log(cartItems);
 }
 
 function handleAddToCart() {
@@ -528,7 +551,6 @@ function handleAddToCart() {
                             fabric: fabric,
                             price: data[i].price
                         }
-                        console.log(cartItem);
                         addToCart(cartItem);
                         break;
                     }

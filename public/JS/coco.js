@@ -49,7 +49,6 @@ function currentSlide(n) {
 }
 
 var slideIndex = 0;
-showSlides();
 
 function showSlides() {
   var i;
@@ -62,8 +61,10 @@ function showSlides() {
     slideIndex = 1
   }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 8000); // Change image every 8 seconds
+  setTimeout(showSlides, 8000);
 }
+
+showSlides();
 
 $(document).ready(function () {
   var feed = new Instafeed({

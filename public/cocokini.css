@@ -424,6 +424,13 @@ a {
   max-height: 600px;
 }
 
+#fourpic {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-height: 600px;
+}
+
 Hide the images by default */ .mySlides {
   display: none;
 }
@@ -561,6 +568,7 @@ Hide the images by default */ .mySlides {
   background-color: white;
   padding-top: 25px;
   padding-bottom: 50px;
+  font-family: 'lane_-_narrowregular';
 }
 
 @media (max-width: 965px) {
@@ -1595,9 +1603,41 @@ Hide the images by default */ .mySlides {
   font-family: 'lane_-_narrowregular';
 }
 
+.active-cart-profile {
+  text-align: center;
+  font-family: 'lane_-_narrowregular';
+}
+
 .profile-container {
   text-align: center;
   font-family: 'run_wildregular';
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contact-info {
+  text-align: center;
+  font-family: 'lane_-_narrowregular';
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 20px;
+}
+
+@media (max-width: 760px) {
+  .profile-container {
+    font-size: 10px;
+  }
+}
+
+.profile-info {
+  margin-right: 50px;
+}
+
+#cart-items {
+  color: red;
+  padding: 5px;
 }
 
 #instafeed {
@@ -1631,4 +1671,19 @@ Hide the images by default */ .mySlides {
 
 #instafeed a img:hover {
   opacity: 1;
+}
+
+#addToCart {
+  background: aliceblue;
+  font-size: 16px;
+}
+
+#addToCart:hover {
+  cursor: pointer;
+  background: gold;
+}
+
+.coming-soon {
+  text-align: center;
+  font-size: 25px;
 }
