@@ -18,7 +18,7 @@ From the Creator, Lauren Page:
 
 # Live Demo
 
-<h3> [Click Here](https://cocokini.herokuapp.com/) </H3>
+<h3> (https://cocokini.herokuapp.com/) </H3>
 
 # What Technologies were used to build this App? 
 • [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)</br>
