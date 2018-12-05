@@ -26,11 +26,11 @@ From the Creator, Lauren Page:
 • [Javascript](https://www.javascript.com/)</br>
 • [jQuery](https://jquery.com/)</br>
 • [Asynchronous HTTP (getJSON) Request](https://api.jquery.com/jquery.getjson/)</br> 
-• [Node.js] (https://nodejs.org/en/) </br> 
-• [Express] (https://expressjs.com/) </br> 
-• [Mongoose] (https://mongoosejs.com/) </br> 
-• [Mocha] (https://mochajs.org/) for Unit Testing</br> 
-• [Chai] (https://www.chaijs.com/) for Unit Testing</br> 
+• [Node.js](https://nodejs.org/en/) </br> 
+• [Express](https://expressjs.com/) </br> 
+• [Mongoose](https://mongoosejs.com/) </br> 
+• [Mocha](https://mochajs.org/) for Unit Testing</br> 
+• [Chai](https://www.chaijs.com/) for Unit Testing</br> 
 
 ![alt text](https://c1.staticflickr.com/1/904/41897000462_f1efd4ffbc_t.jpg)<i>Developed and Programmed by Jonathan Beaty &copy; 2018</i>
 
