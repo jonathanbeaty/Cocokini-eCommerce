@@ -33,10 +33,10 @@ From the Creator, Lauren Page:
 • [Chai](https://www.chaijs.com/) for Unit Testing</br> 
 
 # What Technologies were created for this eCommerce site: 
-• A user API to store user's contact information and preferred bikini size's
-• An event API to store all Cocokini event information: Event name, location, date, and pictures 
-• A products API to store all current bikini's with pictures, bikini name, bikini type, and price
-• A cart API that stores all current users cart details on selected bikini's added to cart
+• A user API to store user's contact information and preferred bikini size's </br>
+• An event API to store all Cocokini event information: Event name, location, date, and pictures</br>
+• A products API to store all current bikini's with pictures, bikini name, bikini type, and price</br>
+• A cart API that stores all current users cart details on selected bikini's added to cart</br>
 
 ![alt text](https://c1.staticflickr.com/1/904/41897000462_f1efd4ffbc_t.jpg)<i>Developed and Programmed by Jonathan Beaty &copy; 2018</i>
 
