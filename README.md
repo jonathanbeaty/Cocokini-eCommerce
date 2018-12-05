@@ -20,7 +20,7 @@ From the Creator, Lauren Page:
 
 <h3> (https://cocokini.herokuapp.com/) </H3>
 
-# What Technologies were used to build this App? 
+# What Technologies were used to build this eCommerce site? 
 • [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)</br>
 • [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)</br>
 • [Javascript](https://www.javascript.com/)</br>
@@ -31,6 +31,12 @@ From the Creator, Lauren Page:
 • [Mongoose](https://mongoosejs.com/) </br> 
 • [Mocha](https://mochajs.org/) for Unit Testing</br> 
 • [Chai](https://www.chaijs.com/) for Unit Testing</br> 
+
+# What Technologies were created for this eCommerce site: 
+• A user API to store user's contact information and preferred bikini size's
+• An event API to store all Cocokini event information: Event name, location, date, and pictures 
+• A products API to store all current bikini's with pictures, bikini name, bikini type, and price
+• A cart API that stores all current users cart details on selected bikini's added to cart
 
 ![alt text](https://c1.staticflickr.com/1/904/41897000462_f1efd4ffbc_t.jpg)<i>Developed and Programmed by Jonathan Beaty &copy; 2018</i>
 
