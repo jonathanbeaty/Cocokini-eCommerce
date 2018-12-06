@@ -586,13 +586,13 @@ xfilter
 }
 
 .bikini-product-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   background-color: white;
   padding-top: 50px;
   padding-bottom: 50px;
-  height: 1000px;
 }
 
 .bikini-grid1 img {
@@ -601,12 +601,10 @@ xfilter
 }
 
 .bikini-grid1 {
-  grid-column-start: 0;
-  grid-column-end: 0;
   position: relative;
   text-align: center;
   display: inline-block;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 
 }
 
@@ -637,6 +635,7 @@ xfilter
     height: 79.456px;
   }
 }
+
 
 .bikini-thumbnail img:hover {
   opacity: 0.7;
