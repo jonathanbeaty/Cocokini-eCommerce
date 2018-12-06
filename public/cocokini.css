@@ -131,9 +131,11 @@ if it's not present, don't show loader */
   flex-grow: 1;
 }
 
-.right {
-  width: 16%;
-  margin-right: 25px;
+@media (max-width: 760px) {
+  .right {
+    width: 16%;
+    margin-right: 15px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -149,6 +151,12 @@ if it's not present, don't show loader */
 
 #cocoLogo {
   height: 80px;
+}
+
+@media (max-width: 760px) {
+  #cocoLogo1 {
+    height: 60px;
+  }
 }
 
 .heading {
@@ -204,6 +212,35 @@ if it's not present, don't show loader */
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+@media (max-width: 1030px) {
+  .button {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 880px) {
+  .button {
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 670px) {
+  .button {
+    font-size: 12px;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .button {
+    font-size: 4px;
+    min-width: 20px;
+  }
+}
+
+
 
 .button span {
   display: block;
@@ -1480,7 +1517,11 @@ Hide the images by default */ .mySlides {
   height: 20px;
   text-align: bottom;
   border-top: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 
 /***** Login CSS *****/
 
@@ -1686,4 +1727,8 @@ Hide the images by default */ .mySlides {
 .coming-soon {
   text-align: center;
   font-size: 25px;
+}
+
+#center-contact {
+  text-align: center;
 }
